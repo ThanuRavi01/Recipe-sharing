@@ -1,0 +1,246 @@
+html{
+    scroll-behavior:smooth;
+}
+header{
+    width:1135px;
+    height:80px;
+    display:flex;
+    align-items: left;
+    justify-content: space-between;
+    padding:0 100px;
+    background: coral;
+}
+.FirstPart{
+    height:100vh;
+    width:100%;
+    background-image: url(Contentbg.avif);
+    background-position: center;
+    background-size: cover;
+}
+.container{
+    font-size: 30px;
+    font-weight:bold;
+    color:black;
+    margin-top: 20px;
+    font-family: 'lucida calligraphy', Georgia, 'Times New Roman',Arial, serif;
+    margin-right:30px;
+}
+.navContainer ul{
+    display: flex;
+    list-style: none;
+}
+.navContainer ul li a{
+    display: block;
+    color:antiquewhite;
+    font-size:20px;
+    padding:6px 20px;
+    transition: .2s;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.navContainer ul li:hover a{
+    background-color: honeydew;
+    color:chocolate;
+    cursor:pointer;
+}
+.content{
+    position:absolute;
+    top:40%;
+    left:8%;
+    transform:translateY(-50%)
+}
+h2{
+    color:lavender;
+    font-size: 45px;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    margin:20px 0px 20px;
+}
+h3{
+    color:beige;
+    font-size: 30px;
+    margin-bottom: 50px;
+    font-family: "lucida calligraphy",georgia,"Lucida Bright";
+}
+.Button{
+    position: absolute;
+    background-color: darksalmon;
+    color:black;
+    font-family: "Lucida Bright","Comics Sans MS",Arial;
+    text-decoration: none;
+    border:2px solid black;
+    font-weight: bold;
+    padding: 13px 30px;
+    transform: .4s;
+}
+.Button:hover{
+    background-color: blanchedalmond;
+    color:black;
+    border: 2px solid black;
+    cursor:pointer;
+}
+.about{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #2d6d75;
+}
+.about img{
+    height: auto;
+    width: 500px;
+    border-radius: 20px 0 20px 0;
+}
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.about h2{
+    color:#edffef;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.about-text p{
+    color: whitesmoke;
+    font-family: "Lucida Bright","Comic San Ms",Arial;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+.about-text{
+    width: 500px;
+}
+.recipe{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: darkorange;
+}
+.recipe h2{
+    color: brown;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.box .card img{
+    width: 100%;
+    height: 1005;
+    object-fit: cover;
+   
+}
+.box .card .content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #edffef;
+    color: #182f32;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.box .card:hover .content{
+    opacity: 1;
+}
+.card h3{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #213032;
+}
+.box .card p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.box .card button{
+    position:relative;
+    background-color: #213032;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    font-weight: bold;
+    transform:.4s;
+    padding: 13px 30px;
+ }
+ .box .card button:hover{
+    background-color: #97a2a3;
+    color: #213032;
+    border: 2px solid black;
+    cursor: pointer;
+ }
+ .contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    padding: 20px;
+    background: #182f32;
+}
+.contact-info{
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    text-align: right;
+    color: #edffef;
+    font-size: 25px;
+}
+.contact-info h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #edffef;
+}
+.contact-info p{
+padding: 15px;
+}
+.social-icons{
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+}
+.social-icon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    color: #97a2a3;
+    text-align: left;
+    line-height: 40px;
+    font-size: 38px;
+}
+.social-icon:hover{
+    color: #314e52;
+    cursor: pointer;
+}
+footer{
+    padding: 20px 0;
+    background: #182f32;
+    width:100%
+}
+footer h5{
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: right;
+    color: #97a2a3;
+}
