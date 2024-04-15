@@ -1,0 +1,267 @@
+html{
+    scroll-behavior:smooth;
+}
+header{
+    width:1135px;
+    height:80px;
+    display:flex;
+    /*align-items: left;*/    
+    padding:0 100px;
+    background: coral;
+}
+.icon img {
+    height: 80px; /* Adjust the height of the icon */
+  }
+.FirstPart{
+    height:100vh;
+    width:100%;
+    justify-content: space-between;
+    background-image: url(Contentbg.avif);
+    background-position: center;
+    background-size: cover;
+}
+.container{
+    font-size: 30px;
+    font-weight:bold;
+    color:black;
+    margin-top: 20px;
+    font-family: 'lucida calligraphy', Georgia, 'Times New Roman',Arial, serif;    
+    padding: 0; /* Remove padding */        
+}
+.navContainer{
+    display:none;
+}
+.navContainer ul{
+    display: flex;
+    list-style: none;
+    text-align: right;
+}
+.navContainer ul li a{
+    display: block;
+    color:antiquewhite;
+    font-size:20px;
+    padding:6px 20px;
+    transition: .2s;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.navContainer ul li:hover a{
+    background-color: honeydew;
+    color:chocolate;
+    cursor:pointer;
+}
+.content{
+    position:absolute;
+    top:40%;
+    left:8%;
+    transform:translateY(-50%)
+}
+h2{
+    color:lavender;
+    font-size: 45px;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    margin:20px 0px 20px;
+}
+h3{
+    color:beige;
+    font-size: 30px;
+    margin-bottom: 50px;
+    font-family: "lucida calligraphy",georgia,"Lucida Bright";
+}
+.Button{
+    position: absolute;
+    background-color: darksalmon;
+    color:black;
+    font-family: "Lucida Bright","Comics Sans MS",Arial;
+    text-decoration: none;
+    border:2px solid black;
+    font-weight: bold;
+    padding: 13px 30px;
+    transform: .4s;
+}
+.Button:hover{
+    background-color: blanchedalmond;
+    color:black;
+    border: 2px solid black;
+    cursor:pointer;
+}
+.about{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #2d6d75;
+}
+.about img{
+    height: auto;
+    width: 500px;
+    border-radius: 20px 0 20px 0;
+}
+.main{
+    width: 1100px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main video{
+    width: 550px; 
+    height: 600px; 
+    float: left;
+}
+.about h2{
+    color:#edffef;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.about-text p{
+    color: whitesmoke;
+    font-family: "Lucida Bright","Comic San Ms",Arial;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+.about-text{
+    width: 500px;
+}
+.recipe{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: darkorange;
+}
+.recipe h2{
+    color: brown;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.box .card img{
+    width: 100%;
+    height: 1005;
+    object-fit: cover;
+   
+}
+.box .card .content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #edffef;
+    color: #182f32;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.box .card:hover .content{
+    opacity: 1;
+}
+.card h3{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #213032;
+}
+.box .card p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.box .card button{
+    position:relative;
+    background-color: #213032;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    font-weight: bold;
+    transform:.4s;
+    padding: 13px 30px;
+ }
+ .box .card button:hover{
+    background-color: #97a2a3;
+    color: #213032;
+    border: 2px solid black;
+    cursor: pointer;
+ }
+ .contact-info{
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;    
+    color: #edffef;
+    font-size: 25px;
+    float:left;
+}
+.contact-info h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #edffef;
+}
+.contact-info p{
+padding: 15px;
+}
+.social-icons {
+    float: right;
+  }
+  
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+.social-icons img {
+    width: 60px; /* Set the size of the social icons */
+    height: 60px;
+  }
+footer{
+    padding: 20px 0;
+    background: #182f32;
+    width:100%;    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    bottom: 0;
+    left: 0;
+}
+footer h5{
+    font-size: 15px;
+    text-align: right;
+    color: #97a2a3;
+}
+
+.menu-item{
+    font-size:24px;
+    padding:20px;
+    text-align:right;
+    cursor: pointer;
+    display:block;
+}
+
+@media only screen and (min-width: 950px){
+    .menu-item{
+        display:none;
+    }
+
+    .navContainer{
+        display:block;
+    }
+   }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie's Bliss</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+    <div class="login">
+        <form action="/" method="POST">
+            <h1>LOG IN</h1>
+            <label for="username">Username</label>
+            <input type="text" required>
+            <label for="password">Password</label>
+            <input type="pasword" required>
+            <button>Submit</button>
+            <p>"New here?<a href="/register"> Sign up </a>and let's get you in the world of foods!</p>
+        </form>
+    </div>
+</body>
+</html>
