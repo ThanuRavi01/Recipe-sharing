@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie's Bliss</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -21,8 +21,8 @@
                 <li><a href="#FP">Home</a></li>
                 <li><a href="#a1">About</a></li>
                 <li><a href="#">Recipes</a></li>
-                <li><a href="login.html">Log In</a></li>
-                <li><a href="register.html">Sign Up</a></li>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/register">Sign Up</a></li>
             </ul>
         </div>
     </header>
@@ -30,7 +30,7 @@
         <div class="content">
             <h2>Unleash your Culinary Passion</h2>
             <h3>Enter into a Whole New World of Delights</h3>
-            <div class="Button"><a href="login.html" style="text-decoration: none; color:black">Start Exploring</a></div>
+            <div class="Button"><a href="/login" style="text-decoration: none; color:black">Start Exploring</a></div>
         </div>
     </div>
     <section class="about" id="a1">
