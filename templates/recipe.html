@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home1.css') }}">
+</head>
+<body>
+    <div id="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to our Recipe Page</h1>
+            <div class="search-box">
+                <form action="/search" class="search-bar" method="POST">
+                    <input type="search" name="search_term" placeholder="Search recipes..." required>
+                    <button class="search-btn" type="submit">
+                      <span>Search</span>
+                    </button>               
+                </form>
+            </div>
+        </div>
+        <div class="recipes">
+            {% if recipes %}
+                <div class="recipe-box">
+                    <h2>Search Results for "{{ search_term }}"</h2>
+                    <div class="scrollable-text">
+                        <ul>
+                            {% for recipe in recipes %}
+                                <strong>Ingredients:</strong> {{ recipe[1] }}<br>                                
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="scrollable-text">
+                        <ul>
+                            {% for recipe in recipes %}                                
+                                <strong>Instructions:</strong> {{ recipe[2] }}<br>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <button class="add-recipe-btn"><a href="/submit_recipe">Add Recipe</a></button>
+        <button class="add-feedback-btn"><a href="/submit_feedback">Feedback</a></button>
+    </div>
+    <script>
+        // Function to hide flash messages after 5 seconds
+        window.onload = function() {
+            var flashMessages = document.querySelectorAll('.flash-message');
+            flashMessages.forEach(function(message) {
+                setTimeout(function() {
+                    message.style.display = 'none';
+                }, 5000);
+            });
+        };
+    </script>
+</body>
+</html>

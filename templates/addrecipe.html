@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addrecipe.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Recipe</h1>
+        <form action="/submit_recipe" method="post">
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name:</label>
+                <input type="text" id="recipe_name" name="recipe_name" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="current_date">Current Date:</label>
+                <input type="date" id="current_date" name="current_date" value="{{ current_date }}" readonly>
+            </div>
+            <button type="submit">Submit Recipe</button>
+        </form>
+    </div>
+    <script>
+        // Get the current date
+        var currentDate = new Date();
+        
+        // Format the date as "YYYY-MM-DD"
+        var formattedDate = currentDate.toLocaleDateString('en-GB');
+    
+        // Set the value of the created_at input field to the formatted date
+        document.getElementById('created_at').value = formattedDate;
+    </script>
+</body>
+</html>

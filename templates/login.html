@@ -14,12 +14,15 @@
         <form action="/login" method="POST">
             <h1>LOG IN</h1>
             <label for="username">Username</label>
-            <input type="text" name="username" required>
-            <label for="password">Password</label>
-            <input type="pasword" name="password" required>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <label for="password">Password</label>            
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>            
             <button>Submit</button>
             <p>"New here?<a href="/register"> Sign up </a>and let's get you in the world of foods!</p>
         </form>
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
     </div>
 </body>
 </html>

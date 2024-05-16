@@ -10,19 +10,41 @@
 </head>
 
 <body>
+    <div id="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
     <header>
         <div class="icon">
-            <img src="C:\Users\Dell\Desktop\Project\icon.png" alt="Icon">
+            <img src="{{ url_for('static', filename='icon.png') }}" alt="Icon">
         </div>
         <div class="container">Foodie's Bliss</div>
         <div class="menu-item">&#9776;</div>
         <div class="navContainer">
             <ul>
                 <li><a href="#FP">Home</a></li>
-                <li><a href="#a1">About</a></li>
-                <li><a href="#">Recipes</a></li>
+                <li><a href="#a1">About</a></li>                
+                <li><a href="/contactus">Contact Us</a></li>
+                {% if 'username' in session %}
+                <li ><a href="/search">Recipes</a></li>
+                <li class="profile-dropdown">
+                    <a href><img src="{{ url_for('static', filename='PPic.jpg') }}" alt="Profile Picture"></a>
+                    <ul class="dropdown-content">
+                        <li><p>Hello, {{ session.username }}</p></li>                    
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>          
+                </li>                     
+                {% else %}
                 <li><a href="/login">Log In</a></li>
                 <li><a href="/register">Sign Up</a></li>
+                {% endif %}           
             </ul>
         </div>
     </header>
@@ -30,14 +52,18 @@
         <div class="content">
             <h2>Unleash your Culinary Passion</h2>
             <h3>Enter into a Whole New World of Delights</h3>
+            {% if 'username' in session %}
             <div class="Button"><a href="/login" style="text-decoration: none; color:black">Start Exploring</a></div>
+            {% else %}
+            <div class="Button"><a href="/login" style="text-decoration: none; color:black">Start Exploring</a></div>
+            {% endif %}            
         </div>
     </div>
     <section class="about" id="a1">
         <h2>About Us</h2>
         <div class="main">
             <video autoplay muted>
-                <source src="C:\Users\Dell\Desktop\Project\ContentVid.mp4" type="video/mp4">
+                <source src="{{ url_for('static', filename='ContentVid.mp4') }}" type="mp4">
                 Video not Supported
             </video>
             <div class="about-text">
@@ -62,43 +88,43 @@
         <h2>Featured Recipes</h2>
         <div class="box">
             <div class="card">
-                <img src="C:\Users\Dell\Desktop\Project\butterchi.jpeg" alt="">
+                <img src="{{ url_for('static', filename='butterchi.jpeg') }}" alt="">
                 <div class="content">
                     <h3>Recipe 1</h3>
                     <P>Butter chicken: a magical fusion of tender chicken enveloped in a creamy,
                         spellbinding tomato sauce, casting a delicious enchantment
                         on every palate it touches.</P>
-                    <button>View Recipe</button>
+                    <button><a href="/search">View Recipe</a></button>
                 </div>
             </div>
             <div class="card">
-                <img src="C:\Users\Dell\Desktop\Project\idlivada.jpg" alt="">
+                <img src="{{ url_for('static', filename='idlivada.jpg') }}" alt="">
                 <div class="content">
                     <h3>Recipe 2</h3>
                     <P>Enter the realm of culinary enchantment with idli vada,
                         where fluffy rice cakes and savory lentil donuts unite in a magical fusion
                         that transports taste buds to a realm of flavor-filled fantasy.</P>
-                    <button>View Recipe</button>
+                    <button><a href="/search">View Recipe</a></button>
                 </div>
             </div>
             <div class="card">
-                <img src="C:\Users\Dell\Desktop\Project\briyani.webp" alt="">
+                <img src="{{ url_for('static', filename='briyani.webp') }}" alt="">
                 <div class="content">
                     <h3>Recipe 3</h3>
                     <P>Embark on a culinary odyssey with biryani,
                         where fragrant rice infused with exotic spices and succulent meats or vegetables create a
                         symphony of flavors
                         that whisk you away on a fantastical journey through the lands of savory delight.</P>
-                    <button>View Recipe</button>
+                    <button><a href="/search">View Recipe</a></button>
                 </div>
             </div>
             <div class="card">
-                <img src="C:\Users\Dell\Desktop\Project\rasgulla.webp" alt="">
+                <img src="{{ url_for('static', filename='rasgulla.webp') }}" alt="">
                 <div class="content">
                     <h3>Recipe 4</h3>
                     <P>Indulge in a sweet reverie with rasgulla, where delicate, spongy cheese balls bathed in syrupy
                         sweetness beckon you to immerse yourself in a world of divine dessert magic.</P>
-                    <button>View Recipe</button>
+                    <button><a href="/search">View Recipe</a></button>
                 </div>
             </div>
 
@@ -110,12 +136,24 @@
             <p><strong>Email:</strong>Foodie'sBliss@gmail.com</p>
         </div>        
         <div class="social-icons">
-            <a href="https://facebook.com"><img src="C:\Users\Dell\Desktop\Project\facebook.png" alt="Facebook"></a>
-            <a href="https://twitter.com"><img src="C:\Users\Dell\Desktop\Project\twitter.png" alt="Twitter"></a>
-            <a href="https://instagram.com"><img src="C:\Users\Dell\Desktop\Project\instagram.png" alt="Instagram"></a>
-            <a href="https://linkedin.com"><img src="C:\Users\Dell\Desktop\Project\linkedin.png" alt="LinkedIn"></a>
+            <a href="https://facebook.com"><img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook"></a>
+            <a href="https://twitter.com"><img src="{{ url_for('static', filename='twitter.png') }}" alt="Twitter"></a>
+            <a href="https://instagram.com"><img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram"></a>
+            <a href="https://linkedin.com"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
         </div>
         <h5>CopyRight © 2024 By Foodie's Bliss </h5>
     </footer>
+
+    <script>
+        // Function to hide flash messages after 5 seconds
+        window.onload = function() {
+            var flashMessages = document.querySelectorAll('.flash-message');
+            flashMessages.forEach(function(message) {
+                setTimeout(function() {
+                    message.style.display = 'none';
+                }, 5000);
+            });
+        };
+    </script>
 </body>
 </html>

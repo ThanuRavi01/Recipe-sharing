@@ -1,0 +1,14 @@
+FROM postgres:alpine
+
+# Environment variables to configure PostgreSQL
+ENV POSTGRES_DB=foody_bliss
+ENV POSTGRES_USER=Thanu_KJC
+ENV POSTGRES_PASSWORD=KJC@24
+
+# Expose the PostgreSQL port
+EXPOSE 5233
+
+# Optionally, you can include a volume declaration to persist data outside the container
+VOLUME /var/lib/postgresql/data
+
+# You don't need to explicitly specify CMD, as it will inherit from the postgres:alpine image

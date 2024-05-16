@@ -1,6 +1,18 @@
 html{
     scroll-behavior:smooth;
 }
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
 header{
     width:1135px;
     height:80px;
@@ -49,6 +61,33 @@ header{
     background-color: honeydew;
     color:chocolate;
     cursor:pointer;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 10px;
+    z-index: 1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.profile-dropdown img {
+    border-radius: 50%;
+    height: 50px;
+    width:50px;
+    object-fit: cover; /* This ensures the image covers the entire circle */
+    border: 2px solid white;
 }
 .content{
     position:absolute;
@@ -254,6 +293,34 @@ footer h5{
     text-align:right;
     cursor: pointer;
     display:block;
+}
+
+.flash-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.flash-message.error {
+    background-color: #dc3545;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media only screen and (min-width: 950px){

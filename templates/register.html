@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="register">        
-        <form action="/register" method="POST">
+        <form action="/register" method="POST" onsubmit="return checkPasswords()">
             <h1>Sign Up</h1>
             <div class="form-control">
-                <label for="username">Enter your Name</label>
+                <label for="username">Username</label>
                 <input type="text" name="username" required>
             </div>
             <div class="form-control">
@@ -21,15 +21,37 @@
             </div>
             <div class="form-control">
                 <labelfor="password">Create Password</label>
-                <input type="password" name="password" required>                
+                <input type="password" name="password" id="password1" required>                
             </div>
             <div class="form-control">
                 <label>Confirm Password</label>
-                <input type="password" name="confirm_password" required>                
+                <input type="password" name="confirm_password" id="password2" required>                
             </div>
+            <br>
+            <p id="error-message" style="color: red;"></p>
             <button type="submit">Sign Up</button>
+
+            <script>
+                function checkPasswords() {
+                    const password1 = document.getElementById('password1').value;
+                    const password2 = document.getElementById('password2').value;
+        
+                    if (password1 === password2) {
+                        document.getElementById('error-message').textContent = '';
+                        // Passwords match, proceed with form submission
+                        return true;
+                    } else {
+                        document.getElementById('error-message').textContent = 'Passwords do not match.';
+                        // Prevent form submission
+                        return false;
+                    }
+                }
+            </script>
             <p>Got an account? Let's <a href="/login">Log In</a></p>
         </form>
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
     </div>
 </body>
 </html>

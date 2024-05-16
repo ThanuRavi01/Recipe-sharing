@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('feedback.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    width: 70%; /* Set form width to 70% of the screen */
+    max-width: 800px; /* Add max-width to limit the container width */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.stars {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.stars input[type="radio"] {
+    display: none;
+    appearance: none;
+}
+
+.stars label {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.stars label:before {
+    font-size: 24px;
+    content: '★'; /* Unicode star character */
+    color: #f8f5e9; /* Star color */
+    margin-right: 5px; /* Space between stars */
+}
+
+.stars input[type="radio"]:checked + label:before {
+    color: #ffcc00; /* Change color of selected star */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
