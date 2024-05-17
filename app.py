@@ -7,7 +7,7 @@ import datetime
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-DB_HOST = '192.168.29.39'
+DB_HOST = 'local.docker.internal'  
 DB_NAME = 'Foodie-biss'
 DB_USER = 'postgres'
 DB_PASSWORD = 'Thanu_2003'
@@ -216,4 +216,4 @@ def contactus():
     return render_template('contactus.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
