@@ -24,9 +24,9 @@ class TestFeedback():
     self.driver.find_element(By.LINK_TEXT, "Recipes").click()
     self.driver.find_element(By.LINK_TEXT, "Feedback").click()
     self.driver.find_element(By.ID, "recipe_name").click()
-    self.driver.find_element(By.ID, "recipe_name").send_keys("Vegetable Pulao")
+    self.driver.find_element(By.ID, "recipe_name").send_keys("rasagulla")
     self.driver.find_element(By.CSS_SELECTOR, "label:nth-child(8)").click()
     self.driver.find_element(By.ID, "feedback").click()
-    self.driver.find_element(By.ID, "feedback").send_keys("Very easy to follow and was delicious")
+    self.driver.find_element(By.ID, "feedback").send_keys("Was good to follow")
     self.driver.find_element(By.CSS_SELECTOR, "button").click()
   
