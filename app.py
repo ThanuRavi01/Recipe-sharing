@@ -7,11 +7,11 @@ import datetime
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-DB_HOST = 'local.docker.internal'  
+DB_HOST = 'host.docker.internal'  
 DB_NAME = 'Foodie-biss'
 DB_USER = 'postgres'
 DB_PASSWORD = 'Thanu_2003'
-DB_PORT = '5432'
+DB_PORT = '5433'
 
 def connect_db():
     try:
